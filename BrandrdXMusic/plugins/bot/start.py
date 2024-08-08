@@ -83,10 +83,10 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
-        await message.reply_photo(
-        photo=config.START_IMG_URL,
-        caption=_["start_2"].format(app.mention, get_readable_time(uptime)),
-        reply_markup=InlineKeyboardMarkup(out),
+        await message.reply_video(
+            video="https://telegra.ph//file/0e90689e1471f962dacff.mp4",
+            caption=_["start_2"].format(message.from_user.mention, app.mention),
+            reply_markup=InlineKeyboardMarkup(out),
         )
         if await is_on_off(2):
             return await app.send_message(
